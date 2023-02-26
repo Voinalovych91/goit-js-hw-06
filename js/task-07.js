@@ -1,10 +1,13 @@
-const rangeEl = document.querySelector('#font-size-control')
-const textEl = document.querySelector('#text')
+const inputEl = document.querySelector('#font-size-control');
+const textEl = document.querySelector('#text');
 
 
-rangeEl.addEventListener('input', onInputDrag)
+textEl.style.fontSize = inputEl.value + 'px';
 
-function onInputDrag() {
-    const rangeValue = rangeEl.value
-    textEl.style.fontSize = `${rangeValue}px`
+inputEl.addEventListener('input', onChangeTextSize);
+
+function onChangeTextSize(event) {
+  
+    textEl.style.fontSize = event.currentTarget.value + 'px'; 
+    
 }
